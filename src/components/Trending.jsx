@@ -27,14 +27,14 @@ const Trending = ({ trending }) => {
     >
       {trending.map((movie) => (
         <SwiperSlide key={movie.id}>
-          <div className="movieTitle">
-            <h1>
-              {movie.title.length > 12
-                ? movie.title.slice(0, 14) + "..."
-                : movie.title}
-            </h1>
-          </div>
           <Link to={`/details/${movie.id}`}>
+            <div className="movieTitle">
+              <h1>
+                {movie.title.length > 12
+                  ? movie.title.slice(0, 14) + "..."
+                  : movie.title}
+              </h1>
+            </div>
             <div className="moviSlider">
               <img
                 src={image500(movie.poster_path)}

@@ -54,7 +54,7 @@ const Details = () => {
         </div>
         <br />
         <div className="flex justify-start gap-[130px] items-start deteils">
-          <img src={image342(movie?.poster_path)} alt={movie.title} />
+          <img src={image342(movie?.poster_path)} alt={movie?.title} />
           <div>
             <table className="table">
               <tbody>
@@ -85,8 +85,8 @@ const Details = () => {
             </table>
           </div>
         </div>
-        <div></div>
-        <div className="subtitle">
+
+        {/* <div className="subtitle">
           {" "}
           <div className="w-full mb-4">
             {" "}
@@ -95,13 +95,13 @@ const Details = () => {
           <div className="w-[55%] flex justify-center">
             <p>
               {" "}
-              {}{" "}
-              {movie?.overview.length > 500
+              {movie?.overview ?? ""}{" "}
+              {movie?.overview?.length > 500
                 ? movie?.overview.slice(0, 510) + "..."
                 : movie?.overview}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

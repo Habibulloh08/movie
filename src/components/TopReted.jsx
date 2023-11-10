@@ -7,6 +7,7 @@ import "swiper/css/effect-cards";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import { image500 } from "../api";
 import "../stayl/trending.css";
+import { Link } from "react-router-dom";
 const TopReted = ({ topReted }) => {
   const isMobile = window.innerWidth <= 668;
 
@@ -24,21 +25,22 @@ const TopReted = ({ topReted }) => {
     >
       {topReted.map((movie) => (
         <SwiperSlide key={movie.id}>
-          {/* <p>{movie.overview}</p> */}
-          <div className="movieTitle">
-            <h1>
-              {movie.title.length > 12
-                ? movie.title.slice(0, 14) + "..."
-                : movie.title}
-            </h1>
-          </div>
-          <div className="moviSlider">
-            <img
-              src={image500(movie.poster_path)}
-              alt=""
-              className="slider-image"
-            />
-          </div>
+          <Link to={`/details/${movie.id}`}>
+            <div className="movieTitle">
+              <h1>
+                {movie.title.length > 12
+                  ? movie.title.slice(0, 14) + "..."
+                  : movie.title}
+              </h1>
+            </div>
+            <div className="moviSlider">
+              <img
+                src={image500(movie.poster_path)}
+                alt=""
+                className="slider-image"
+              />
+            </div>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>

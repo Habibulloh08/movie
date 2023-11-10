@@ -135,7 +135,7 @@ body {
   }
   .deteils {
     flex-direction: column;
-    gap: 255px;
+    gap: 15px;
   }
   .table-td_item {
     width: 200px;
@@ -163,7 +163,7 @@ body {
   }
   .deteils {
     flex-direction: column;
-    gap: 300px;
+    gap: 15px;
   }
   .table-td_item {
     width: 170px;
