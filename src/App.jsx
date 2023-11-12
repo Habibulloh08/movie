@@ -12,7 +12,7 @@ function App() {
       <div className="px-6 mt-5">
         <Navbarbottom />
       </div>
-      <main className="px-5 mt-10 overflow-hidden">
+      <main className="px-5 mt-10 overflow-hidden container">
         <Outlet />
       </main>
     </div>

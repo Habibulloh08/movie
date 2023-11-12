@@ -21,15 +21,15 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const trendingData = await fetchTredingMovie();
-        console.log(trendingData);
+        // console.log(trendingData);
         setTrending(trendingData.results);
 
         const upcomingData = await fetchUpcomingMovie();
-        console.log(upcomingData);
+        // console.log(upcomingData);
         setUpcoming(upcomingData.results);
 
         const topRatedData = await fetchTopRetedMovie();
-        console.log(topRatedData);
+        // console.log(topRatedData);
         setTopReted(topRatedData.results);
 
         setIsLoading(false);
@@ -46,7 +46,7 @@ const Home = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <div>
+    <div className="mt-8">
       <div className="flex gap-2">
         <div className="box"></div>
         <h2 className="text-2xl font-bold md:xl:sm:w-20">Premyera</h2>

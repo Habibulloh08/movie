@@ -5,10 +5,10 @@ import {
   fetchMovieDetail,
   fetchMovieSimilar,
   image342,
-  image500,
 } from "../api";
 import Loading from "../components/Loading";
-import { Timeline } from "antd";
+import Cast from "../components/Cast";
+import Smilar from "../components/Smilar";
 
 const Details = () => {
   const { id } = useParams();
@@ -46,7 +46,7 @@ const Details = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="w-full flex  relative">
+    <div className="w-full flex-col  relative mt-8">
       <div className="w-[100%] border-2 border-black p-5">
         <div className="flex gap-5 items-center">
           <div className="box"></div>
@@ -102,6 +102,10 @@ const Details = () => {
             </p>
           </div>
         </div> */}
+      </div>
+      <div>{movie?.id && cast.length > 0 && <Cast cast={cast} />}</div>
+      <div>
+        {movie?.id && similar.length > 0 && <Smilar similar={similar} />}
       </div>
     </div>
   );

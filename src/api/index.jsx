@@ -6,7 +6,7 @@ const base_url = "https://api.themoviedb.org/3";
 const trendingMovie = `${base_url}/trending/movie/day?api_key=${api_key}`;
 const upcamingMovie = `${base_url}/movie/upcoming?api_key=${api_key}`;
 const topReatedMovie = `${base_url}/movie/top_rated?api_key=${api_key}`;
-// const sooniMovie = `${base_url}/movie/movie_id?api_key=${api_key}`;
+const searchMovie = `${base_url}/search/movie?api_key=${api_key}`;
 const moviDetail = (id) => `${base_url}/movie/${id}?api_key=${api_key}`;
 const movieCredits = (id) =>
   `${base_url}/movie/${id}/credits?api_key=${api_key}`;
@@ -24,9 +24,10 @@ export const fetchTopRetedMovie = () => {
   return apiRequest(topReatedMovie);
 };
 
-// export const fetchSoonMovie = () => {
-//   return apiRequest(sooniMovie);
-// };
+export const fetchSearchMovie = (params) => {
+  return apiRequest(searchMovie, params);
+};
+
 
 export const fetchMovieDetail = (id) => {
   return apiRequest(moviDetail(id));

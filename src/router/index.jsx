@@ -3,7 +3,7 @@ import App from "../App";
 import Home from "../page/Home";
 import Details from "../page/Details";
 import ErrorPage from "../page/ErrorPage";
-
+import SerchMovie from "../components/SerchMovie";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <ErrorPage />,
+  },
+  {
+    path: "/search-movie",
+    element: <SerchMovie />
   },
 ]);
 
